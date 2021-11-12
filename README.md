@@ -13,6 +13,8 @@ oc label configmap FE_PROPERTIES app=ocp-app
 
 oc new-app --image-stream openshift/jboss-eap73-openshift:latest --binary --name=ocp-app --as-deployment-config
 
+oc set env dc/${APP_NAME} --overwrite --env=ENV_FILE=.../datasources.env  # la dir corrente è la extensions deployata
+
 oc set env bc/${APP_NAME} --overwrite --env=CUSTOM_INSTALL_DIRECTORIES=.  # la dir corrente è la extensions deployata
 
 oc set volumes dc/ocp-app --add --name=FE_PROPERTIES --configmap-name=FE_PROPERTIES -m /FE_PROPERTIES --overwrite -t configmap

@@ -11,7 +11,7 @@ oc new-project test
 oc create configmap FE_PROPERTIES --from-file=FE_PROPERTIES/
 oc label configmap FE_PROPERTIES app=ocp-app
 
-oc new-app --image-stream openshift/jboss-eap73-openshift:latest --binary --name=ocp-app
+oc new-app --image-stream openshift/jboss-eap73-openshift:latest --binary --name=ocp-app -as-deployment-config
 
 oc set volumes dc/ocp-app --add --name=FE_PROPERTIES --configmap-name=FE_PROPERTIES -m /FE_PROPERTIES --overwrite -t configmap
 

@@ -1,0 +1,8 @@
+embed-server --server-config=standalone-openshift.xml
+
+/system-property=properties.directory:add(value=/PROPERTIES)
+/system-property=countries.file:add(value=coutries.txt)
+
+data-source add --name=TestDS --jndi-name=java:jboss/TestDS --driver-name=mysql --connection-url=jdbc:mysql://dbms.binary-deploy.svc:3306/test --user-name=test --password=Test123! --validate-on-match=true --background-validation=false --valid-connection-checker-class-name=org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker --exception-sorter-class-name=org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter
+
+quit

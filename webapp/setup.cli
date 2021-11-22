@@ -5,6 +5,6 @@ embed-server --server-config=standalone-openshift.xml
 
 data-source add --name=TestDS --jndi-name=java:jboss/TestDS --driver-name=mysql --connection-url=jdbc:mysql://dbms.binary-deploy.svc:3306/test --user-name=test --password=Test123! --validate-on-match=true --background-validation=false --valid-connection-checker-class-name=org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker --exception-sorter-class-name=org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter
 
-# deployment-overlay add --name=ocp-app-deployment-structure --content=WEB-INF/jboss-deployment-structure.xml=/myjboss/jboss-deployment-structure.xml --deployments=DEPLS --redeploy-affected
+# deployment-overlay add --name=ocp-binary-deploy-deployment-structure --content=WEB-INF/jboss-deployment-structure.xml=/myjboss/jboss-deployment-structure.xml --deployments=ocp-binary-deploy-0.1.0-SNAPSHOT.ear --redeploy-affected
 
 quit

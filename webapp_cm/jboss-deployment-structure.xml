@@ -1,8 +1,8 @@
 <jboss-deployment-structure>
   <deployment>
       <dependencies>
-         <module name="blah-blah-1.0.0.jar"/>
-         <module name="blah-blah-2.0.0.jar"/>
+         <module name="com.oracle"/>
+         <module name="com.mariadb"/>
       </dependencies>
     </deployment>
 </jboss-deployment-structure>
